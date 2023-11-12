@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(184, 170, 170);
+}
+.game {
+    overflow: auto;
+    margin-top: 0%;
+    margin-left: 21%;
+    padding: 1px;
+    width: 1000px;
+    height: 700px;
+    border: 1px, black;
+    background-color: rgb(134, 110, 157);
+}
+
+.score {
+    overflow: auto;
+    margin-left: 25%;
+    margin-top: 20%;
+    height: 300px;
+    width: 500px;
+    background-color: rgb(211, 179, 121);
+    padding: 1px;
+}
+
+.login {
+    overflow: auto;
+    margin-left: 9%;
+    margin-top: 10%;
+    padding: 1px;
+    height: 150px;
+    width: 400px;
+    background-color: rgb(190, 174, 174);
+}
+
+input[type="submit"] {
+	background-color: rgb(214, 172, 208);
+	font-size: 150%;
+	font-weight: bolder;
+    margin-top: 26%;
+    margin-left: 65%;
+}
