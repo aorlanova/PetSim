@@ -10,6 +10,7 @@
                     <input type="text" name="password" placeholder="Password">
                     <input type="submit" value="Login" name="login-button">
                 </form>
+                <a class="question" href="registration.html">Don't have an account? Register</a>
             </div>
         </body>
     </head>
