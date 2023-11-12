@@ -25,7 +25,8 @@ input[type="submit"]{
     margin-bottom: 20px;
 }
 
-input[type="text"]{
+input[type="text"],
+input[type="password"]{
     margin-top: 30px;
     width: 380px;
     height: 50px;
