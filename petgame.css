@@ -34,7 +34,21 @@
     background: pink;
     position: fixed;
 }
-
+.careBar img{
+	width:15px;
+	height:15px;
+	margin-left:2px;
+	margin-right:2px;
+}
+.careBar form{
+	margin-left: 20px;
+}
+input[type="submit"] {
+	background-color: rgb(214, 172, 208);
+	font-weight: bolder;
+	font-size: 90%;
+	margin-left: 300px;
+}
 .bone {
     display: inline;
     z-index: 20;
