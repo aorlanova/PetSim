@@ -1,45 +1,38 @@
-<?php session_start();
+<!-- <?php
+session_start();
 
-function hashPassword($password){
-    $options = [
-        'cost' => 12,
-    ];
-    return password_hash($password, PASSWORD_BCRYPT, $options);
+function hashPassword($password) {
+    return password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
 }
 
-function registerUser($username, $password, &$userDatabase){
-    if(isset($userDatabase[$username])){
-        echo "Username already exists. Please choose another one.";
-    }
-    else{
+function registerUser($username, $password, &$userDatabase) { 
         $hashedPassword = hashPassword($password);
-
-        $userDatabase[$username] = $hashedPassword;
-        echo "Registration successful!". $password;
-    }
+        $userDatabase[$username] = ['password' => $hashedPassword];
+        echo "Registration successful!";
 }
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username = $_POST["Username"];
-    $password = $_POST["Password"];
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $username = $_GET['username'];
+    $password = $_GET['password'];
 
-    $userDatabase = [];
+    $userDatabase = isset($_SESSION['userDatabase']) ? $_SESSION['userDatabase'] : [];
 
     registerUser($username, $password, $userDatabase);
+    var_dump($userDatabase);
+    $_SESSION['userDatabase'] = $userDatabase;
 }
-
-$_SESSION['userDatabase'] = $userDatabase;
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/dog-icon.png">
 </head>
 <body>
 <div class="container">
     <h1>Thank you!</h1>
-    <p>Welcome to PetLands, <?php echo $_POST['name']; ?>!</p>
+    <p>Welcome to PetLands, <?php echo $_GET['name']; ?>!</p>
     <p>Now <a href="login.php">log in to play with your pet!</a></p>
 </div>
 </body>  
