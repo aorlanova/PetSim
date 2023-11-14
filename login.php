@@ -8,7 +8,7 @@ function loginUser($username, $password, $userDatabase, &$errorMsg) {
     if (isset($userDatabase[$username])) {
        
         if (password_verify($password, $userDatabase[$username]['password'])) {
-            echo "Login successful!";
+            header("Location:pet.html");
            
             $_SESSION['Username'] = $username;
         } else {
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="icon" type="image/x-icon" href="images/dog-icon.png">
+        <link rel="icon" type="image/x-icon" href="proj2-img/dog-icon.png">
         <body>
             <h1 class="header">Welcome to PetLand!</h1>
             <div class="container">

@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="icon" type="image/x-icon" href="images/dog-icon.png">
+        <link rel="icon" type="image/x-icon" href="proj2-img/dog-icon.png">
         <body>
             <div class="container">
                 <h1>Register</h1>
