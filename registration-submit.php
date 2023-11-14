@@ -12,7 +12,6 @@ function registerUser($username, $password, &$userDatabase, $age, $petname, $nam
             'petname' => $petname, 
             'name' => $name
         ];
-        echo "Registration successful!";
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
