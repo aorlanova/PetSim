@@ -1,26 +1,23 @@
-<?php
-session_start();
+<?php session_start();
 
-// Function to check if the username already exists
 function usernameExists($username, $userDatabase) {
     return isset($userDatabase[$username]);
 }
 
-// Example usage
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["Username"];
     $password = $_POST["password"];
     $name = $_POST["name"];
+    $age = $_POST["age"];
+    $petname = $_POST["petname"];
 
-    // Simulate user database as an associative array
     $userDatabase = isset($_SESSION['userDatabase']) ? $_SESSION['userDatabase'] : [];
+    $errorMsg = '';
 
-    // Check if the username already exists
     if (usernameExists($username, $userDatabase)) {
-        echo "<p stlye='color'>Username already exists. Please choose another one.</p>";
+        $errorMsg = "<p class='error-message'>Username already exists. Please choose another one.</p>";
     } else {
-        // Redirect to the registration-submit.php file with the user data
-        header("Location: registration-submit.php?username=$username&password=$password&name=$name");
+        header("Location: registration-submit.php?username=$username&password=$password&name=$name&age=$age&petname=$petname");
         exit();
     }
 }
@@ -39,8 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="text" name="age" placeholder="Age" maxlength="2" required>
                     <input type="password" name="password" placeholder="Password" required>
+                    <input type="text" name="petname" placeholder="Pet's Name" required>
                     <input type="submit" value="Register" name="login-button">
                 </form>
+                <?php echo $errorMsg;?>
+                <a class="question-login" href="login.php">Have an account? Login</a>
             </div>
         </body>
     </head>
