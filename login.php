@@ -8,7 +8,8 @@ function loginUser($username, $password, $userDatabase, &$errorMsg) {
     if (isset($userDatabase[$username])) {
        
         if (password_verify($password, $userDatabase[$username]['password'])) {
-            header("Location:pet.html");
+            $petname = $userDatabase[$username]['petname'];
+            header("Location:pet.php?petname=$petname");
            
             $_SESSION['Username'] = $username;
         } else {

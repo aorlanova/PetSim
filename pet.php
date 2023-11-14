@@ -18,7 +18,7 @@
 			</div>
 			<div class="careBar">
 				<img src="proj2-img/bone.png" width="100" height="100">
-				<h2>Care for petname here!</h2> <br>
+				<h2>Care for <?php echo $_GET['petname']; ?> here!</h2> <br>
 				
 			</div>
 		</div>

@@ -10,7 +10,8 @@ function registerUser($username, $password, &$userDatabase, $age, $petname, $nam
             'password' => $hashedPassword, 
             'age' => $age, 
             'petname' => $petname, 
-            'name' => $name
+            'name' => $name,
+            'score' => 0
         ];
 }
 
