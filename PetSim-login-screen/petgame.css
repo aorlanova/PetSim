@@ -1,0 +1,75 @@
+.game {
+    overflow: hidden;
+    margin-top: 0%;
+    margin-left: 22%;
+    padding-top: 1px;
+    width: 998px;
+    height: 700px;
+    border: 1px, black;
+    background-color: rgb(146, 164, 187);
+}
+
+.pet {
+    padding: 1px;
+    margin-left: 400px;
+    margin-top: 300px;
+    z-index: 100;
+}
+
+.cloudOne {
+
+}
+
+.cloudTwo {
+    padding-left: 400px;
+}
+
+.careBar {
+    display: flex;
+    padding-top: 1px;
+    width: 1000px;
+    height: 125px;
+    z-index: 10;
+    margin-top: 10px;
+    background: pink;
+    position: fixed;
+}
+.careBar img{
+	width:15px;
+	height:15px;
+	margin-left:2px;
+	margin-right:2px;
+}
+.careBar form{
+	margin-left: 20px;
+}
+input[type="submit"] {
+	background-color: rgb(214, 172, 208);
+	font-weight: bolder;
+	font-size: 90%;
+	margin-left: 300px;
+}
+.bone {
+    display: inline;
+    z-index: 20;
+}
+
+.leaderboard {
+    background: rgb(219, 193, 145);
+    top: 0;
+    float: right;
+    width: 200px;
+    height: 500px;
+}
+
+.statusBar {
+    float:inline-start;
+    width: 140px;
+    height: 25px;
+    margin-left: 40%;
+}
+
+.happystars{
+    margin-bottom: 150px !important;
+    float: left;
+}
