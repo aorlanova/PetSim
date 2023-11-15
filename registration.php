@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         registerUser($username, $password, $userDatabase, $age, $petname, $name);
         $_SESSION['userDatabase'] = $userDatabase;
+        $_SESSION['currentUser'] = $username;
         header("Location: registration-submit.php?name=$name");
         exit();
     }
