@@ -1,7 +1,23 @@
 <?php session_start();
+$userDatabase = isset($_SESSION['userDatabase']) ? $_SESSION['userDatabase'] : [];
 
 function usernameExists($username, $userDatabase) {
     return isset($userDatabase[$username]);
+}
+
+function hashPassword($password) {
+    return password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
+}
+
+function registerUser($username, $password, &$userDatabase, $age, $petname, $name) { 
+    $hashedPassword = hashPassword($password);
+    $userDatabase[$username] = [
+        'password' => $hashedPassword, 
+        'age' => $age, 
+        'petname' => $petname, 
+        'name' => $name,
+        'points' => 0
+    ];
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,14 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $age = $_POST["age"];
     $petname = $_POST["petname"];
-
-    $userDatabase = isset($_SESSION['userDatabase']) ? $_SESSION['userDatabase'] : [];
     $errorMsg = '';
 
     if (usernameExists($username, $userDatabase)) {
         $errorMsg = "<p class='error-message'>Username already exists. Please choose another one.</p>";
+       
     } else {
-        header("Location: registration-submit.php?username=$username&password=$password&name=$name&age=$age&petname=$petname");
+        registerUser($username, $password, $userDatabase, $age, $petname, $name);
+        $_SESSION['userDatabase'] = $userDatabase;
+        header("Location: registration-submit.php?name=$name");
         exit();
     }
 }

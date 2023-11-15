@@ -1,35 +1,3 @@
-<?php session_start();
-
-function hashPassword($password) {
-    return password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
-}
-
-function registerUser($username, $password, &$userDatabase, $age, $petname, $name) { 
-        $hashedPassword = hashPassword($password);
-        $userDatabase[$username] = [
-            'password' => $hashedPassword, 
-            'age' => $age, 
-            'petname' => $petname, 
-            'name' => $name,
-            'score' => 0
-        ];
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $username = $_GET['username'];
-    $password = $_GET['password'];
-    $age = $_GET['age'];
-    $petname = $_GET['petname'];
-    $name = $_GET['name'];
-
-    $userDatabase = isset($_SESSION['userDatabase']) ? $_SESSION['userDatabase'] : [];
-
-    registerUser($username, $password, $userDatabase, $age, $petname, $name);
-    // var_dump($userDatabase);
-    $_SESSION['userDatabase'] = $userDatabase;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
