@@ -16,10 +16,34 @@
 				<img src="proj2-img/dog.png" width="100" height="200" alt="doggy">
 			</div>
 			<div class="careBar">
-				<img src="proj2-img/bone.png" width="100" height="100">
 				<h2>Care for petname here!</h2> <br>
-				
-				
+				<form action="pet-cared.html" method="POST">
+					<dl>
+						<dt>
+							<strong> Choose food: </strong>
+							<input type="radio" id="treat" name="food" value="treat"> <img src="proj2-img/treat.png"> Treat
+							<input type="radio" id="dryfood" name="food" value="dryfood"> <img src="proj2-img/dryfood.png"> Dry Food
+							<input type="radio" id="wetfood" name="food" value="wetfood"> <img src="proj2-img/wetfood.png"> Wet Food
+						</dt>
+						<dt>
+							<strong> Choose exercise: </strong>
+							<select name="cars" id="cars">
+								<option value="10mins">10 mins</option>
+								<option value="20mins">20 mins</option>
+								<option value="30mins">30 mins</option>
+							</select>
+							<input type="radio" id="walk" name="exercise" value="walk"> <img src="proj2-img/walk.png">Walk
+							<input type="radio" id="run" name="exercise" value="run"> <img src="proj2-img/run.png">Run
+							<input type="radio" id="play" name="exercise" value="play"> <img src="proj2-img/play.png">Play
+						</dt>
+						<dt>
+							<strong> Choose care: </strong>
+							<input type="checkbox" id="brush" name="care" value="brush"> <img src="proj2-img/brush.png">Brush
+							<input type="checkbox" id="bathe" name="care" value="bathe"> <img src="proj2-img/bathe.png">Bathe
+						</dt>
+					</dl>
+					<input type="submit" name="Submit" value="Care for pet" />
+				</form>
 			</div>
 		</div>
 	</body>
